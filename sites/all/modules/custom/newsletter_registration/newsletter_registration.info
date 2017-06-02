@@ -1,0 +1,3 @@
+name = Newsletter-Anmeldung
+description = Dieses Modul ermöglicht das An- und Abmelden zu dem Newsletter
+core = 7.x

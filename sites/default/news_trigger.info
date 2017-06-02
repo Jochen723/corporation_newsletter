@@ -1,0 +1,3 @@
+name = news trigger
+description = Triggert alle Speicherungen von Inhaltstypen im Portal und speichert sie in der Datenbank ab.
+core = 7.x

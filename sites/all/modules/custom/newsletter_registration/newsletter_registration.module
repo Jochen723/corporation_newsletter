@@ -1,0 +1,112 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: jonaskortum
+ * Date: 02.06.17
+ * Time: 10:01
+ */
+
+function newsletter_registration_menu()
+{
+    $items['newsletter_registration'] = array(
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('newsletter_registration_email_input_form'),
+    );
+
+    return $items;
+}
+
+function newsletter_registration_email_input_form()
+{
+
+    $form['registration'] = array(
+        '#title' => "newsletter",
+        '#type' => 'fieldset',
+        '#description' => ""
+    );
+
+    $form['registration']['email'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Email'),
+        '#required' => TRUE,
+        '#default_value' => "",
+        '#description' => "Please enter your email.",
+        '#size' => 30,
+        '#maxlength' => 30,
+    );
+
+    $form['registration']['register'] = array(
+        '#type' => 'submit',
+        '#value' => 'register',
+        '#submit' => array('newsletter_registration_register_mail_address')
+    );
+
+    $form['registration']['sign_off'] = array(
+        '#type' => 'submit',
+        '#value' => 'sign off',
+        '#submit' => array('newsletter_registration_sign_off_mail_address')
+    );
+
+    return $form;
+}
+
+function newsletter_registration_register_mail_address($form, &$form_state)
+{
+
+    $mail = $form_state['values']['email'];
+
+    if (!valid_email_address($mail)) {
+        form_set_error('email', 'Please type in a valid mail address.');
+    } else {
+
+        $sql = "SELECT * FROM {newsletter_registration} WHERE mail_address = '" . $mail . "'";
+        $result = db_query($sql);
+        $found = false;
+
+        foreach ($result as $item) {
+            $found = true;
+        }
+
+        if (!$found) {
+            db_insert('newsletter_registration')
+                ->fields(array('mail_address'))
+                ->values(array(
+                    'mail_address' => $mail,
+                ))
+                ->execute();
+            drupal_set_message("mail successfully registered");
+        } else {
+            drupal_set_message('mail is already registered.', 'error');
+        }
+
+    }
+}
+
+function newsletter_registration_sign_off_mail_address($form, &$form_state)
+{
+    $mail = $form_state['values']['email'];
+
+    if (!valid_email_address($mail)) {
+        form_set_error('email', 'Please type in a valid mail address.');
+    } else {
+        $sql = "SELECT * FROM {newsletter_registration} WHERE mail_address = '" . $mail . "'";
+        $result = db_query($sql);
+        $found = false;
+
+        foreach ($result as $item) {
+            $found = true;
+        }
+
+        if ($found) {
+            db_delete('newsletter_registration')
+                ->condition('mail_address', $mail)
+                ->execute();
+
+            drupal_set_message("mail successfully signed off");
+        } else {
+            drupal_set_message('no mail address found.', 'error');
+        }
+    }
+}

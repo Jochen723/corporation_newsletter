@@ -1,0 +1,3 @@
+name = Newsletter-Builder
+description = Dieses Modul ermöglicht das Bauen und Versenden eines Newsletters.
+core = 7.x
