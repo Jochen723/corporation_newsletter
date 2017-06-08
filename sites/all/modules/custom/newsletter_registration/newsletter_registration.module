@@ -70,17 +70,20 @@ function newsletter_registration_register_mail_address($form, &$form_state)
         }
 
         if (!$found) {
+
+            $unique_id = newsletter_registration_generate_random_string(30);
+
             db_insert('newsletter_registration')
-                ->fields(array('mail_address'))
+                ->fields(array('mail_address','unique_id'))
                 ->values(array(
                     'mail_address' => $mail,
+                    'unique_id' => $unique_id,
                 ))
                 ->execute();
             drupal_set_message("mail successfully registered");
         } else {
             drupal_set_message('mail is already registered.', 'error');
         }
-
     }
 }
 
@@ -109,4 +112,15 @@ function newsletter_registration_sign_off_mail_address($form, &$form_state)
             drupal_set_message('no mail address found.', 'error');
         }
     }
+}
+
+function newsletter_registration_generate_random_string($length)
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }

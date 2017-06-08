@@ -1,0 +1,319 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: jonaskortum
+ * Date: 06.06.17
+ * Time: 07:28
+ */
+
+function newsletter_event_participation_menu() {
+
+    $items['newsletter_interest/%/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access callback' => true,
+        'page callback' => 'newsletter_event_participation_interest',
+    );
+
+    $items['newsletter_no_interest/%/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access callback' => true,
+        'page callback' => 'newsletter_event_participation_no_interest',
+    );
+
+    $items['newsletter_participation/%/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access callback' => true,
+        'page callback' => 'newsletter_event_participation_participation',
+    );
+
+    $items['newsletter_no_participation/%/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access callback' => true,
+        'page callback' => 'newsletter_event_participation_no_participation',
+    );
+
+    return $items;
+
+}
+
+
+/*
+ * Erweitert die Anzeige des Nodes um die Nutzer-Tabelle
+ */
+function newsletter_event_participation_node_view($node, $view_mode, $langcode) {
+
+        $test = $node->type;
+        if (!strcmp($test, "test")) {
+            $node->content['my_additional_field2'] = array(
+                '#markup' => t(newsletter_event_participation_get_additional_buttons()),
+                '#weight' => 1000,
+            );
+        }
+}
+
+function newsletter_event_participation_get_additional_buttons() {
+
+    //TODO Wird wohl nicht mehr benötiigt
+    /*
+    //Das Objekt des aktuellen Nodes herausfinden
+    $node = menu_get_object();
+
+
+    global $base_url;
+
+    $node2 = $base_url . "/newsletter_interest/20/tDQuU8iuilKWRKeoENduGCm074z9wr";
+
+    $button_string = "Test";
+    $tempString = "<br><br><br><button onclick=\"window.location.href='$node2'\" type=\"button\" id=\"keinInteresse\">Ich bin nicht interessiert </button> ";
+    $tempString .= "<br><br><br><button onclick=\"window.location.href='$node2'\" type=\"button\" id=\"keinInteresse\">Ich bin nicht interessiert </button> ";
+
+    return $tempString;
+
+*/
+}
+
+function newsletter_event_participation_no_interest() {
+
+    $nid = arg(1);
+    $unique_id = arg(2);
+
+    $node = node_load($nid);
+
+    if(!empty($node)) {
+        $user_counter = 0;
+        $sql = "SELECT * FROM {newsletter_registration} WHERE unique_id = '".$unique_id."'";
+        $result = db_query($sql);
+
+        foreach ($result as $item) {
+            $user_counter++;
+        }
+
+        if($user_counter == 1) {
+
+            $sql = "SELECT * FROM {newsletter_participation} WHERE nid = ".$nid." AND unique_user_id = '".$unique_id."'";
+            $result = db_query($sql);
+
+            foreach ($result as $item) {
+                $found_user = $item;
+            }
+
+            if(!empty($found_user)) {
+                if($found_user->interest != 0) {
+                    db_update('newsletter_participation')
+                        ->fields(array(
+                            'interest' => 0,
+                        ))
+                        ->condition('nid', $nid)
+                        ->condition('unique_user_id', $unique_id)
+                        ->execute();
+                }
+            } else {
+                drupal_set_message("empty");
+                db_insert('newsletter_participation')
+                    ->fields(array('nid','unique_user_id', 'interest'))
+                    ->values(array(
+                        'nid' => $nid,
+                        'unique_user_id' => $unique_id,
+                        'interest' => 0,
+                    ))
+                    ->execute();
+            }
+
+        } else {
+            drupal_set_message("no user with this id found. Please contact the administrator");
+        }
+
+    } else {
+        drupal_set_message("no node with this id found. Please contact the administrator", 'error');
+    }
+
+
+    return "";
+}
+
+function newsletter_event_participation_interest() {
+
+    $nid = arg(1);
+    $unique_id = arg(2);
+
+    $node = node_load($nid);
+
+    if(!empty($node)) {
+        $user_counter = 0;
+        $sql = "SELECT * FROM {newsletter_registration} WHERE unique_id = '".$unique_id."'";
+        $result = db_query($sql);
+
+        foreach ($result as $item) {
+            $user_counter++;
+        }
+
+        if($user_counter == 1) {
+            $sql = "SELECT * FROM {newsletter_participation} WHERE nid = ".$nid." AND unique_user_id = '".$unique_id."'";
+            $result = db_query($sql);
+
+
+
+            foreach ($result as $item) {
+                $found_user = $item;
+            }
+
+            if(!empty($found_user)) {
+                if($found_user->interest != 1) {
+                    db_update('newsletter_participation')
+                        ->fields(array(
+                            'interest' => 1,
+                        ))
+                        ->condition('nid', $nid)
+                        ->condition('unique_user_id', $unique_id)
+                        ->execute();
+                }
+            } else {
+                drupal_set_message("empty");
+                db_insert('newsletter_participation')
+                    ->fields(array('nid','unique_user_id', 'interest'))
+                    ->values(array(
+                        'nid' => $nid,
+                        'unique_user_id' => $unique_id,
+                        'interest' => 1,
+                    ))
+                    ->execute();
+
+            }
+
+        } else {
+            drupal_set_message("no user with this id found. Please contact the administrator");
+        }
+
+    } else {
+        drupal_set_message("no node with this id found. Please contact the administrator", 'error');
+    }
+
+
+    return "";
+}
+
+function newsletter_event_participation_no_participation() {
+
+    $nid = arg(1);
+    $unique_id = arg(2);
+
+    $node = node_load($nid);
+
+    if(!empty($node)) {
+        $user_counter = 0;
+        $sql = "SELECT * FROM {newsletter_registration} WHERE unique_id = '".$unique_id."'";
+        $result = db_query($sql);
+
+        foreach ($result as $item) {
+            $user_counter++;
+        }
+
+        if($user_counter == 1) {
+            $sql = "SELECT * FROM {newsletter_participation} WHERE nid = ".$nid." AND unique_user_id = '".$unique_id."'";
+            $result = db_query($sql);
+
+
+
+            foreach ($result as $item) {
+                $found_user = $item;
+            }
+
+            if(!empty($found_user)) {
+                if($found_user->participation != 0) {
+                    db_update('newsletter_participation')
+                        ->fields(array(
+                            'participation' => 0,
+                        ))
+                        ->condition('nid', $nid)
+                        ->condition('unique_user_id', $unique_id)
+                        ->execute();
+                }
+            } else {
+                drupal_set_message("empty");
+                db_insert('newsletter_participation')
+                    ->fields(array('nid','unique_user_id', 'participation'))
+                    ->values(array(
+                        'nid' => $nid,
+                        'unique_user_id' => $unique_id,
+                        'participation' => 0,
+                    ))
+                    ->execute();
+
+            }
+
+        } else {
+            drupal_set_message("no user with this id found. Please contact the administrator");
+        }
+
+    } else {
+        drupal_set_message("no node with this id found. Please contact the administrator", 'error');
+    }
+
+
+    return "";
+
+}
+
+function newsletter_event_participation_participation() {
+
+    $nid = arg(1);
+    $unique_id = arg(2);
+
+    $node = node_load($nid);
+
+    if(!empty($node)) {
+        $user_counter = 0;
+        $sql = "SELECT * FROM {newsletter_registration} WHERE unique_id = '".$unique_id."'";
+        $result = db_query($sql);
+
+        foreach ($result as $item) {
+            $user_counter++;
+        }
+
+        if($user_counter == 1) {
+            $sql = "SELECT * FROM {newsletter_participation} WHERE nid = ".$nid." AND unique_user_id = '".$unique_id."'";
+            $result = db_query($sql);
+
+
+
+            foreach ($result as $item) {
+                $found_user = $item;
+            }
+
+            if(!empty($found_user)) {
+                if($found_user->participation != 1) {
+                    db_update('newsletter_participation')
+                        ->fields(array(
+                            'interest' => 1,
+                            'participation' => 1,
+                        ))
+                        ->condition('nid', $nid)
+                        ->condition('unique_user_id', $unique_id)
+                        ->execute();
+                }
+            } else {
+                drupal_set_message("empty");
+                db_insert('newsletter_participation')
+                    ->fields(array('nid','unique_user_id', 'interest', 'participation'))
+                    ->values(array(
+                        'nid' => $nid,
+                        'unique_user_id' => $unique_id,
+                        'interest' => 1,
+                        'participation' => 1,
+                    ))
+                    ->execute();
+
+            }
+
+        } else {
+            drupal_set_message("no user with this id found. Please contact the administrator");
+        }
+
+    } else {
+        drupal_set_message("no node with this id found. Please contact the administrator", 'error');
+    }
+
+
+    return "";
+}
+

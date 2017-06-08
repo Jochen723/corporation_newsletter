@@ -18,6 +18,24 @@ function newsletter_builder_menu() {
         'page arguments' => array('newsletter_builder_build_newsetter_form'),
     );
 
+    $items['newsletter_overview'] = array(
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content'),
+        'page callback' => 'drupal_get_form',
+        'access callback' => 'user_is_logged_in',
+        'page arguments' => array('newsletter_builder_newsletter_overview_form'),
+        'file' => 'newsletter_builder_show_newsletter.inc'
+    );
+
+    $items['configure_newsletter'] = array(
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content'),
+        'page callback' => 'drupal_get_form',
+        'access callback' => true,
+        'page arguments' => array('newsletter_builder_configure_newsetter_form'),
+        'file' => 'newsletter_builder_configure_newsletter.inc'
+    );
+
     return $items;
 }
 

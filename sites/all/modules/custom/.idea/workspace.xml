@@ -25,10 +25,47 @@
       <file leaf-file-name="newsletter_builder.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.73913">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state vertical-scroll-proportion="-5.9130435">
+              <caret line="51" column="64" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="64" />
               <folding>
-                <marker date="1496395406000" expanded="true" signature="846:885" placeholder="SELECT * FRO... " />
+                <marker date="1496751895000" expanded="true" signature="1589:1628" placeholder="SELECT * FRO... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_builder_configure_newsletter.inc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_configure_newsletter.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66568047">
+              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+                <marker date="1496752454000" expanded="true" signature="186:239" placeholder="SELECT * FRO... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_builder_show_newsletter.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_show_newsletter.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.347826">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_builder_save_newsletter.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_save_newsletter.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.869565">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,14 +81,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newsletter_registration.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="newsletter_event_participation.info" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.info">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_event_participation.module" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-76.95652">
+              <caret line="118" column="32" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+                <marker date="1496751651000" expanded="true" signature="2281:2355" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="2524:2623" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="4080:4154" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="4322:4421" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="5889:5963" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="6131:6230" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="7716:7790" placeholder="SELECT * FRO... " />
+                <marker date="1496751651000" expanded="true" signature="7958:8057" placeholder="SELECT * FRO... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_event_participation.install" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.install">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_registration.info" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.info">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter_registration.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14121339">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="81" column="28" selection-start-line="75" selection-start-column="12" selection-end-line="81" selection-end-column="28" />
               <folding>
-                <marker date="1496395643000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
-                <marker date="1496395643000" expanded="true" signature="2465:2541" placeholder="SELECT * FRO... " />
+                <marker date="1496748087000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
+                <marker date="1496748087000" expanded="true" signature="2602:2678" placeholder="SELECT * FRO... " />
               </folding>
             </state>
           </provider>
@@ -86,8 +173,13 @@
         <option value="$PROJECT_DIR$/newsletter_overview/newsletter_overview.module" />
         <option value="$PROJECT_DIR$/newsletter_overview/newsletter_overview_category.inc" />
         <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder_html.inc" />
-        <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder.module" />
+        <option value="$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.info" />
+        <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder_show_newsletter.inc" />
         <option value="$PROJECT_DIR$/newsletter_registration/newsletter_registration.module" />
+        <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder_save_newsletter.inc" />
+        <option value="$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.module" />
+        <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder.module" />
+        <option value="$PROJECT_DIR$/newsletter_builder/newsletter_builder_configure_newsletter.inc" />
       </list>
     </option>
   </component>
@@ -104,8 +196,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -132,8 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -166,12 +256,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="newsletter_event_participation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="newsletter_builder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,10 +329,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2796875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2859375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -272,30 +378,9 @@
     <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder.module">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1496395406000" expanded="true" signature="846:885" placeholder="SELECT * FRO... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding>
-            <marker date="1496395643000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
-            <marker date="1496395643000" expanded="true" signature="2465:2541" placeholder="SELECT * FRO... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.73913">
           <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
-            <marker date="1496395406000" expanded="true" signature="846:885" placeholder="SELECT * FRO... " />
+            <marker date="1496751895000" expanded="true" signature="1589:1628" placeholder="SELECT * FRO... " />
           </folding>
         </state>
       </provider>
@@ -310,11 +395,134 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14121339">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1496395643000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
-            <marker date="1496395643000" expanded="true" signature="2465:2541" placeholder="SELECT * FRO... " />
+            <marker date="1496748087000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
+            <marker date="1496748087000" expanded="true" signature="2602:2678" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1496751895000" expanded="true" signature="1589:1628" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding>
+            <marker date="1496748087000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
+            <marker date="1496748087000" expanded="true" signature="2602:2678" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.install">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_save_newsletter.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.869565">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_html.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_registration/newsletter_registration.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="81" column="28" selection-start-line="75" selection-start-column="12" selection-end-line="81" selection-end-column="28" />
+          <folding>
+            <marker date="1496748087000" expanded="true" signature="1570:1646" placeholder="SELECT * FRO... " />
+            <marker date="1496748087000" expanded="true" signature="2602:2678" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_event_participation/newsletter_event_participation.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-76.95652">
+          <caret line="118" column="32" selection-start-line="118" selection-start-column="32" selection-end-line="118" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+            <marker date="1496751651000" expanded="true" signature="2281:2355" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="2524:2623" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="4080:4154" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="4322:4421" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="5889:5963" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="6131:6230" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="7716:7790" placeholder="SELECT * FRO... " />
+            <marker date="1496751651000" expanded="true" signature="7958:8057" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9130435">
+          <caret line="51" column="64" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="64" />
+          <folding>
+            <marker date="1496751895000" expanded="true" signature="1589:1628" placeholder="SELECT * FRO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_show_newsletter.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.347826">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newsletter_builder/newsletter_builder_configure_newsletter.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66568047">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+            <marker date="1496752454000" expanded="true" signature="186:239" placeholder="SELECT * FRO... " />
           </folding>
         </state>
       </provider>
