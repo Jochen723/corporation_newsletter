@@ -104,7 +104,6 @@ function newsletter_event_participation_no_interest()
                         ->execute();
                 }
             } else {
-                drupal_set_message("empty");
                 db_insert('newsletter_participation')
                     ->fields(array('nid', 'unique_user_id', 'interest'))
                     ->values(array(
@@ -167,7 +166,6 @@ function newsletter_event_participation_interest()
                         ->execute();
                 }
             } else {
-                drupal_set_message("empty");
                 db_insert('newsletter_participation')
                     ->fields(array('nid', 'unique_user_id', 'interest'))
                     ->values(array(
@@ -231,7 +229,6 @@ function newsletter_event_participation_no_participation()
                         ->execute();
                 }
             } else {
-                drupal_set_message("empty");
                 db_insert('newsletter_participation')
                     ->fields(array('nid', 'unique_user_id', 'participation'))
                     ->values(array(
@@ -296,7 +293,6 @@ function newsletter_event_participation_participation()
                         ->execute();
                 }
             } else {
-                drupal_set_message("empty");
                 db_insert('newsletter_participation')
                     ->fields(array('nid', 'unique_user_id', 'interest', 'participation'))
                     ->values(array(
