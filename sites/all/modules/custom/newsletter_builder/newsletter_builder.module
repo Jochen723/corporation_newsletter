@@ -7,16 +7,9 @@
  */
 
 require_once ("newsletter_builder_html.inc");
+require_once ("newsletter_builder_save_newsletter.inc");
 
 function newsletter_builder_menu() {
-
-    $items['newsletter_builder'] = array(
-        'type' => MENU_CALLBACK,
-        'access arguments' => array('access content'),
-        'page callback' => 'drupal_get_form',
-        'access callback' => 'user_is_logged_in',
-        'page arguments' => array('newsletter_builder_build_newsetter_form'),
-    );
 
     $items['newsletter_overview'] = array(
         'type' => MENU_CALLBACK,
@@ -27,6 +20,7 @@ function newsletter_builder_menu() {
         'file' => 'newsletter_builder_show_newsletter.inc'
     );
 
+    /*
     $items['configure_newsletter'] = array(
         'type' => MENU_CALLBACK,
         'access arguments' => array('access content'),
@@ -35,30 +29,42 @@ function newsletter_builder_menu() {
         'page arguments' => array('newsletter_builder_configure_newsetter_form'),
         'file' => 'newsletter_builder_configure_newsletter.inc'
     );
+    */
+
+    $items['send_newsletter/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access callback' => true,
+        'page callback' => 'newsletter_builder_build_newsletter',
+    );
+
+    $items['show_newsletter/%'] = array(
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access content'),
+        'page callback' => 'drupal_get_form',
+        'access callback' => 'user_is_logged_in',
+        'page arguments' => array('newsletter_builder_show_newsletter_form'),
+        'file' => 'newsletter_builder_show_newsletter.inc'
+    );
+
+
 
     return $items;
 }
 
-function newsletter_builder_build_newsetter_form() {
-    $form['registration']['register'] = array(
-        '#type' => 'submit',
-        '#value' => 'send',
-        '#submit' => array('newsletter_builder_build_newsletter')
-    );
+function newsletter_builder_build_newsletter() {
 
-    return $form;
-}
-
-function newsletter_builder_build_newsletter($form, &$form_state) {
-
+    $node = node_load(arg(1));
 
     $sql = 'SELECT * FROM {newsletter_registration}';
     $result = db_query($sql);
+
     foreach ($result as $item) {
         $email = $item->mail_address;
 
+        drupal_set_message($email);
+
         //Der Newsletter wird gebaut, ihm wird ein Betreff und ein Absender zugewiesen
-        $emailBody = newsletter_builder_get_html_content();
+        $emailBody = newsletter_builder_get_html_content($node, $item->unique_id);
         $emailSubject = "corporation newsletter";
         $emailFrom = "corporation@isum.de";
 
@@ -69,8 +75,14 @@ function newsletter_builder_build_newsletter($form, &$form_state) {
 
         //Die Mail wird versendet
         drupal_mail('newsletter_builder', 'newsletter', $email, language_default(), $params, $emailFrom);
+        $heute = date("Y-m-d H:i:s");
+        newsletter_builder_save_newsletter($node, $heute);
         drupal_set_message("Mail wurde versendet!");
+
+
     }
+
+    return "";
 }
 
 function newsletter_builder_mail($key, &$message, $params) {

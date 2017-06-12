@@ -6,6 +6,7 @@
  * Time: 14:22
  */
 
+/*
 function newsletter_builder_configure_newsetter_form() {
 
     $nodes = array();
@@ -34,3 +35,4 @@ function newsletter_builder_configure_newsetter_form() {
 function newsletter_builder_save_newsletter($form, &$form_state) {
 
 }
+*/

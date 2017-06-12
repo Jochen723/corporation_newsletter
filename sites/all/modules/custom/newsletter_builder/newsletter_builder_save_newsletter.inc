@@ -6,6 +6,8 @@
  * Time: 07:33
  */
 
-function newsletter_builder_save_newsletter() {
+function newsletter_builder_save_newsletter($node, $date) {
 
+    $sql = "INSERT INTO {newsletter} (date, nid) VALUES ('".$date."',".$node->nid.") ";
+    db_query($sql);
 }

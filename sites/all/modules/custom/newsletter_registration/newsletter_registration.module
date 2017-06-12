@@ -37,6 +37,27 @@ function newsletter_registration_email_input_form()
         '#maxlength' => 30,
     );
 
+    $form['registration']['first_name'] = array(
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        '#title' => t('Vorname'),
+    );
+
+    $form['registration']['last_name'] = array(
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        '#title' => t('Nachname'),
+    );
+
+    $form['registration']['gender'] = array(
+        '#type' => 'radios',
+        '#title' => t('Geschlecht'),
+        '#required' => TRUE,
+        '#options' => array(
+            t('männlich'),
+            t('weiblich'),
+        ),);
+
     $form['registration']['register'] = array(
         '#type' => 'submit',
         '#value' => 'register',
@@ -57,6 +78,8 @@ function newsletter_registration_register_mail_address($form, &$form_state)
 
     $mail = $form_state['values']['email'];
 
+    $is_female = $form_state['values']['gender'];
+
     if (!valid_email_address($mail)) {
         form_set_error('email', 'Please type in a valid mail address.');
     } else {
@@ -73,11 +96,17 @@ function newsletter_registration_register_mail_address($form, &$form_state)
 
             $unique_id = newsletter_registration_generate_random_string(30);
 
+            $first_name = $form_state['values']['first_name'];
+            $last_name = $form_state['values']['last_name'];
+
             db_insert('newsletter_registration')
-                ->fields(array('mail_address','unique_id'))
+                ->fields(array('mail_address','unique_id', 'first_name', 'last_name', 'is_female'))
                 ->values(array(
                     'mail_address' => $mail,
                     'unique_id' => $unique_id,
+                    'first_name' => $first_name,
+                    'last_name' => $last_name,
+                    'is_female' => $is_female
                 ))
                 ->execute();
             drupal_set_message("mail successfully registered");
