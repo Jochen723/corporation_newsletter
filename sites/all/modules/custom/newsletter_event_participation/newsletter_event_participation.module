@@ -45,7 +45,7 @@ function newsletter_event_participation_node_view($node, $view_mode, $langcode)
 {
     $test = $node->type;
 
-    if (!strcmp($test, "test")) {
+    if (!strcmp($test, "ausschreibung")) {
 
         global $base_url;
         if ($node = menu_get_object()) {

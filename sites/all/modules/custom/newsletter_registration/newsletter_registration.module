@@ -22,7 +22,7 @@ function newsletter_registration_email_input_form()
 {
 
     $form['registration'] = array(
-        '#title' => "newsletter",
+        '#title' => "Newsletter An-/Abmeldung",
         '#type' => 'fieldset',
         '#description' => ""
     );
@@ -32,9 +32,14 @@ function newsletter_registration_email_input_form()
         '#title' => t('Email'),
         '#required' => TRUE,
         '#default_value' => "",
-        '#description' => "Please enter your email.",
+        '#description' => "Bitte Email-Adresse eingeben.",
         '#size' => 30,
         '#maxlength' => 30,
+    );
+
+    $form['registration']['title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Titel'),
     );
 
     $form['registration']['first_name'] = array(
@@ -60,13 +65,13 @@ function newsletter_registration_email_input_form()
 
     $form['registration']['register'] = array(
         '#type' => 'submit',
-        '#value' => 'register',
+        '#value' => 'Anmelden',
         '#submit' => array('newsletter_registration_register_mail_address')
     );
 
     $form['registration']['sign_off'] = array(
         '#type' => 'submit',
-        '#value' => 'sign off',
+        '#value' => 'Abmelden',
         '#submit' => array('newsletter_registration_sign_off_mail_address')
     );
 
@@ -81,7 +86,7 @@ function newsletter_registration_register_mail_address($form, &$form_state)
     $is_female = $form_state['values']['gender'];
 
     if (!valid_email_address($mail)) {
-        form_set_error('email', 'Please type in a valid mail address.');
+        form_set_error('email', 'Bitte gültige Email-Adresse eingeben.');
     } else {
 
         $sql = "SELECT * FROM {newsletter_registration} WHERE mail_address = '" . $mail . "'";
@@ -98,20 +103,22 @@ function newsletter_registration_register_mail_address($form, &$form_state)
 
             $first_name = $form_state['values']['first_name'];
             $last_name = $form_state['values']['last_name'];
+            $title = $form_state['values']['title'];
 
             db_insert('newsletter_registration')
-                ->fields(array('mail_address','unique_id', 'first_name', 'last_name', 'is_female'))
+                ->fields(array('mail_address','unique_id', 'title', 'first_name', 'last_name', 'is_female'))
                 ->values(array(
                     'mail_address' => $mail,
                     'unique_id' => $unique_id,
+                    'title' => $title,
                     'first_name' => $first_name,
                     'last_name' => $last_name,
                     'is_female' => $is_female
                 ))
                 ->execute();
-            drupal_set_message("mail successfully registered");
+            drupal_set_message("Mail-Adresse erfolgreich angemeldet.");
         } else {
-            drupal_set_message('mail is already registered.', 'error');
+            drupal_set_message('Mail-Adresse ist bereits angemeldet.', 'error');
         }
     }
 }
@@ -121,7 +128,7 @@ function newsletter_registration_sign_off_mail_address($form, &$form_state)
     $mail = $form_state['values']['email'];
 
     if (!valid_email_address($mail)) {
-        form_set_error('email', 'Please type in a valid mail address.');
+        form_set_error('email', 'Bitte gültige Email-Adresse eingeben.');
     } else {
         $sql = "SELECT * FROM {newsletter_registration} WHERE mail_address = '" . $mail . "'";
         $result = db_query($sql);
@@ -136,7 +143,7 @@ function newsletter_registration_sign_off_mail_address($form, &$form_state)
                 ->condition('mail_address', $mail)
                 ->execute();
 
-            drupal_set_message("mail successfully signed off");
+            drupal_set_message("Mail-Adresse erfolgreich abgemeldet.");
         } else {
             drupal_set_message('no mail address found.', 'error');
         }

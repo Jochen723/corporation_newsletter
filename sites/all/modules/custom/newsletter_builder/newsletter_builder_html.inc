@@ -111,11 +111,90 @@ function newsletter_builder_get_html_content($node, $pw) {
     </td>';
 
 
-
+/*
     $html .= $interest;
     $html .= $noInterest;
     $html .= $participation;
     $html .= $noParticipation;
+*/
+
+    $html = '
+    <table border="1" width="100%">
+        <tr>
+            <th width="20%" font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+            <th font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Titel</td>
+            <td>'.$node->title.'</td>
+        </tr>
+        <tr>
+            <td>Forschungsprogramm</td>
+            <td>'.$node->field_forschungsprogramm["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Förderung durch</td>
+            <td>'.$node->field_f_rderung_durch["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Veröffentlicht am</td>
+            <td>'.$node->field_ver_ffentlicht_am["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Stichtag</td>
+            <td>'.$node->field_stichtag["und"][0]["value"].'</td>
+        </tr>
+    </table>
+    <br>';
+
+    $html .= '
+    <table border="1" width="100%">
+        <tr>
+            <th width="20%" font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+            <th font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Zweck</td>
+            <td>'.$node->field_zweck["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Keywords aus der Ausschreibung</td>
+            <td>'.$node->field_keywords_aus_der_auschreib["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Zuwendungsempfänger</td>
+            <td>'.$node->field_zuwendungsempf_nger["und"][0]["value"].'</td>
+        </tr>
+    </table>
+    <br>';
+
+    $html .= '
+    <table border="1" width="100%">
+        <tr>
+            <th width="20%" font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+            <th font color="#fff" bgcolor="#C8C8C8" align="left">&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Webseite</td>
+            <td>'.$node->field_webseite["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Vorlagen</td>
+            <td>'.$node->field_vorlagen["und"][0]["value"].'</td>
+        </tr>
+        <tr>
+            <td>Hinweise</td>
+            <td>'.$node->field_hinweise["und"][0]["value"].'</td>
+        </tr>
+    </table>';
+
+
+    $html .= '
+<br>
+<br>';
+
+    $html .= $node->field_kontaktdaten["und"][0]["value"];
+
 
     return $html;
 }
